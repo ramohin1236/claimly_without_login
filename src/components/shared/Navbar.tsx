@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import weblogo from "../../../public/brand_logo.svg";
 import Link from "next/link";
+import Button from "./Button";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,12 +51,15 @@ export default function Navbar() {
 
           {/* Desktop Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
-            <button className="px-4 py-2 text-sm border border-[#2563EB] text-[#2563EB] rounded hover:bg-blue-50 transition">
+            {/* <button className="px-4 py-2 text-sm border border-[#2563EB] text-[#2563EB] rounded hover:bg-blue-50 transition">
               Login
-            </button>
-            <button className="px-4 py-2 text-sm bg-[#2563EB] text-white rounded hover:bg-[#1d4ed8] transition">
+            </button> */}
+            <Button variant="outline" >
+              Login
+            </Button>
+            <Button variant="primary">
               Sign up
-            </button>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -64,11 +68,26 @@ export default function Navbar() {
             className="lg:hidden p-2"
             aria-label="Menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -97,12 +116,18 @@ export default function Navbar() {
 
             {/* Mobile Auth Buttons Dropdown */}
             <div className="mt-6 pt-4 border-t space-y-3">
-              <button className="w-full px-4 py-3 text-sm border border-[#2563EB] text-[#2563EB] rounded hover:bg-blue-50 transition">
+              {/* <button className="w-full px-4 py-3 text-sm border border-[#2563EB] text-[#2563EB] rounded hover:bg-blue-50 transition">
                 Login
-              </button>
-              <button className="w-full px-4 py-3 text-sm bg-[#2563EB] text-white rounded hover:bg-[#1d4ed8] transition">
+              </button> */}
+              <Button variant="outline" fullWidth>
+                Login
+              </Button>
+              <Button variant="primary" fullWidth>
+                Sign Up
+              </Button>
+              {/* <button className="w-full px-4 py-3 text-sm bg-[#2563EB] text-white rounded hover:bg-[#1d4ed8] transition">
                 Sign up
-              </button>
+              </button> */}
             </div>
           </div>
         )}

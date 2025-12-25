@@ -1,15 +1,11 @@
 
-import Navbar from '@/components/shared/Navbar'
-import React from 'react'
 
-const page = () => {
+const Home = () => {
   return (
     <div>
-         <Navbar/>   
-
          <p className=''>asdjfasjflksaj</p>  
     </div>
   )
 }
 
-export default page
+export default Home
