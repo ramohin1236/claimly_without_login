@@ -69,7 +69,7 @@ const Timeline = () => {
     <section className="py-20">
       {/* Heading */}
       <div className="flex flex-col items-center justify-center gap-4 mb-14">
-        <h2 className="text-3xl lg:text-[40px] leading-[120%] font-semibold">
+        <h2 className="text-2xl lg:text-[40px] leading-[120%] font-semibold">
           How It <span className="text-brand">Works</span>
         </h2>
         <p className="tracking-[1px] leading-[120%] text-color-secondary text-center">
