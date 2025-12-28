@@ -41,10 +41,11 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`px-4 py-2 rounded text-sm font-medium transition ${pathname === link.href
-                  ? "bg-[#2563EB] text-white"
-                  : "text-gray-700 hover:text-[#1d4ed8] hover:bg-gray-100"
-                  }`}
+                className={`px-4 py-2 rounded text-sm font-medium transition ${
+                  pathname === link.href
+                    ? "bg-[#2563EB] text-white"
+                    : "text-gray-700 hover:text-[#1d4ed8] hover:bg-gray-100"
+                }`}
               >
                 {link.name}
               </Link>
@@ -56,10 +57,11 @@ export default function Navbar() {
             {/* <button className="px-4 py-2 text-sm border border-[#2563EB] text-[#2563EB] rounded hover:bg-blue-50 transition">
               Login
             </button> */}
-            <Button variant="outline">
+            <Button variant="outline" href="/login">
               Login
             </Button>
-            <Button variant="primary">
+
+            <Button variant="primary" href="/register">
               Sign up
             </Button>
           </div>
@@ -99,15 +101,17 @@ export default function Navbar() {
         <div className="lg:hidden">
           {/* Overlay */}
           <div
-            className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-              }`}
+            className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out ${
+              isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
             onClick={() => setIsMenuOpen(false)}
           />
 
           {/* Drawer */}
           <div
-            className={`fixed top-0 left-0 h-full w-[280px] bg-[#f5f7fa] z-50 shadow-2xl transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
-              }`}
+            className={`fixed top-0 left-0 h-full w-[280px] bg-[#f5f7fa] z-50 shadow-2xl transform transition-transform duration-300 ease-in-out ${
+              isMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
           >
             <div className="flex flex-col h-full p-6">
               {/* Header inside drawer */}
@@ -146,10 +150,11 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition ${pathname === link.href
-                      ? "bg-[#2563EB] text-white"
-                      : "text-gray-700 hover:bg-gray-100"
-                      }`}
+                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition ${
+                      pathname === link.href
+                        ? "bg-[#2563EB] text-white"
+                        : "text-gray-700 hover:bg-gray-100"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -159,11 +164,13 @@ export default function Navbar() {
 
               {/* Footer inside drawer (Auth Buttons) */}
               <div className="pt-6 border-t border-gray-200 space-y-3">
-                <Button variant="outline" fullWidth>
+                {/* Login */}
+                <Button variant="outline" href="/login">
                   Login
                 </Button>
-                <Button variant="primary" fullWidth>
-                  Sign Up
+
+                <Button variant="primary" href="/register">
+                  Sign up
                 </Button>
               </div>
             </div>

@@ -1,7 +1,9 @@
 import React from "react";
+import Link from "next/link";
 
 interface ButtonProps {
   children?: React.ReactNode;
+  href?: string; // 👈 add this
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
   className?: string;
@@ -9,8 +11,6 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
   disabled?: boolean;
-
-  /** Icon props */
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   iconOnly?: boolean;
@@ -18,6 +18,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   children,
+  href,
   type = "button",
   onClick,
   className = "",
@@ -29,11 +30,9 @@ const Button: React.FC<ButtonProps> = ({
   rightIcon,
   iconOnly = false,
 }) => {
-  // Base classes
   const baseClasses =
     "inline-flex items-center justify-center gap-2 rounded transition-all duration-200 focus:outline-none";
 
-  // Variant classes
   const variantClasses = {
     primary:
       "bg-[#2563EB] text-white hover:bg-[#1d4ed8] border border-[#2563EB]",
@@ -43,46 +42,42 @@ const Button: React.FC<ButtonProps> = ({
       "bg-transparent text-[#2563EB] border border-[#2563EB] hover:bg-blue-50",
   };
 
-  // Size classes
   const sizeClasses = {
     sm: iconOnly ? "p-2 text-sm" : "px-3 py-1.5 text-sm",
     md: iconOnly ? "p-2.5 text-sm" : "px-4 py-2 text-sm",
     lg: iconOnly ? "p-3 text-base" : "px-6 py-3 text-base",
   };
 
-  // Width class
-  const widthClass = fullWidth ? "w-full" : "";
-
-  // Disabled class
-  const disabledClass = disabled
-    ? "opacity-50 cursor-not-allowed pointer-events-none"
-    : "cursor-pointer";
-
-  // Combine all classes
-  const buttonClasses = `
+  const classes = `
     ${baseClasses}
     ${variantClasses[variant]}
     ${sizeClasses[size]}
-    ${widthClass}
-    ${disabledClass}
+    ${fullWidth ? "w-full" : ""}
+    ${disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}
     ${className}
   `.trim();
+
+  // ✅ If href exists → render Link
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {leftIcon}
+        {!iconOnly && children}
+        {rightIcon}
+      </Link>
+    );
+  }
 
   return (
     <button
       type={type}
       onClick={onClick}
-      className={buttonClasses}
+      className={classes}
       disabled={disabled}
     >
-      {/* Left Icon */}
-      {leftIcon && <span className="flex items-center">{leftIcon}</span>}
-
-      {/* Text */}
-      {!iconOnly && <span>{children}</span>}
-
-      {/* Right Icon */}
-      {rightIcon && <span className="flex items-center">{rightIcon}</span>}
+      {leftIcon}
+      {!iconOnly && children}
+      {rightIcon}
     </button>
   );
 };
