@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // 🔑 temporary auth state (later replace with real auth)
-  const isLogin = false;
+  const isLogin = true;
 
   const pathname = usePathname();
 

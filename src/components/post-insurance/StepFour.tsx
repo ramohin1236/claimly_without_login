@@ -100,10 +100,10 @@ const StepFour: React.FC<StepProps> = ({ onPrev }) => {
             )}
 
             {/* Consent & Acknowledgement */}
-            <div className="space-y-3">
+            <div className="space-y-3 ">
                 <p className="text-[#1E293B] text-sm font-medium">Consent & Acknowledgement</p>
-                <label className="flex items-start gap-3 cursor-pointer group">
-                    <div className="relative flex items-center justify-center mt-1">
+                <label className="flex items-center gap-3 cursor-pointer group">
+                    <div className="relative flex items-center justify-center ">
                         <input
                             type="checkbox"
                             checked={consentChecked}

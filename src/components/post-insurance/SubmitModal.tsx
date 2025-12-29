@@ -37,7 +37,7 @@ const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <button
-                    onClick={() => router.push("/")}
+                    onClick={() => router.push("/my_claims")}
                     className="w-full py-3 bg-[#2563EB] text-white font-semibold rounded-[12px] hover:bg-[#1d4ed8] transition-colors shadow-lg shadow-blue-100"
                 >
                     Go to my claims
