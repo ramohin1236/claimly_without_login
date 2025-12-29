@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="container mx-auto  py-10 lg:py-28">
+    <div className="container mx-auto  py-5 lg:py-16">
       {/* Hero Section */}
       <div className="lg:flex justify-around items-center mx-auto">
         {/* Left side */}
