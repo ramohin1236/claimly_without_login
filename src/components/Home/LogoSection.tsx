@@ -11,11 +11,11 @@ import logosixth from '../../../public/image 21 (6).png'
 const LogoSection = () => {
   return (
     <div className='container mx-auto py-10 lg:py-28'>
-      <div className='flex flex-col p-6 lg:p-16 bg-linear-to-br from-[#DBEAFE] to-[#F9FAFB] rounded-[40px] outline-[1px] outline-[#0000001A] xl:flex-row justify-between items-center  gap-10'>
+      <div className='flex flex-col lg:flex-row p-6 lg:p-16 bg-linear-to-br from-[#DBEAFE] to-[#F9FAFB] rounded-[40px] outline-[1px] outline-[#0000001A] xl:flex-row justify-between items-center  gap-10'>
         {/* left section */}
         <div className='flex flex-1 flex-col gap-4 md:gap-2.5'>
           <div>
-            <h2 className='text-2xl lg:text-[40px] leading-[120%] font-semibold'>Everyday Australians are Using <span className='text-brand'> Claimly</span>  with insurers like</h2>
+            <h2 className='text-2xl lg:text-[32px] xl:text-[40px] leading-[120%] font-semibold mb-3'>Everyday Australians are Using <span className='text-brand'> Claimly</span>  with insurers like</h2>
           </div>
           <div className='flex flex-col gap-4'>
             <p className='default-list-text'>Claimly can be used with all Australian general insurers.</p>
@@ -43,7 +43,7 @@ const LogoSection = () => {
           </div>
         </div>
         {/* right section */}
-        <div className='w-full flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-2 gap-5 justify-center items-center'>
+        <div className='w-full flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2 gap-5 justify-center items-center'>
           <div className='py-2 px-6 lg:px-14 lg:py-6 bg-white border border-[#2563EB] rounded-lg flex items-center justify-center'>
             <Image
               src={logofirst}
