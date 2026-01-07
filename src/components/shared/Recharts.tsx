@@ -71,7 +71,7 @@ const RechartsComponent = () => {
           Insurer <span className="text-brand">Insights</span>
         </h2>
         <p className="default-list-text max-w-2xl">
-          Most asked-about insurers (last 30 days). Based on Claimly submissions.
+          Most asked-about insurers (last 30 days). Based on Claimly submissions. Not affiliated with any insurer.
         </p>
       </div>
 
