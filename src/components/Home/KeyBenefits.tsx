@@ -6,6 +6,7 @@ import claim_report from "../../../public/claim_report.svg";
 import specialist from "../../../public/specialist.svg";
 import practical from "../../../public/practical.svg";
 import informational from "../../../public/informational.svg";
+import { InfoIcon } from "../icons-svg/customIcons";
 
 const benefitsData = [
   {
@@ -68,7 +69,10 @@ const KeyBenefits = () => {
       {/* cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         {benefitsData.map((item, index) => (
-          <div key={index} className="border-color-default p-8 bg-white items-stretch h-full flex flex-col">
+          <div
+            key={index}
+            className="border-color-default p-8 bg-white items-stretch h-full flex flex-col"
+          >
             <Image
               src={item.img}
               alt={item.alt}
@@ -82,6 +86,12 @@ const KeyBenefits = () => {
             </p>
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center mt-8 gap-1">
+        <InfoIcon fill="var(--secondary_text)" width={14} height={14} />
+        <p className="default-text">
+          General information only - not legal or financial advice.
+        </p>
       </div>
     </div>
   );
